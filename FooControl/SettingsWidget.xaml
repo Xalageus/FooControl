@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="FooControl.SettingsWidget"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FooControl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" 
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+    Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width=".100*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height=".100*"/>
+        </Grid.RowDefinitions>
+
+        <ListView Grid.Column="0" Grid.Row="0" x:Name="pagesView" IsItemClickEnabled="True" SingleSelectionFollowsFocus="False" SelectionChanged="pagesView_SelectionChanged"/>
+        <Frame Grid.Column="1" Grid.Row="0" x:Name="settingsFrame"/>
+        <Button Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" x:Name="saveButton" Content="Save" Margin="10" IsEnabled="False" Click="saveButton_Click"/>
+    </Grid>
+</Page>

@@ -108,7 +108,7 @@
                     <Slider x:Name="songTimeSlider" Value="0" Maximum="100" IsEnabled="False" Grid.Column="1" ManipulationCompleted="songTimeSlider_ManipulationCompleted" ManipulationMode="All" Tapped="songTimeSlider_Tapped" ThumbToolTipValueConverter="{StaticResource SliderTimeToolTipConverter}" PreviewKeyUp="songTimeSlider_PreviewKeyUp" ManipulationStarted="songTimeSlider_ManipulationStarted" PreviewKeyDown="songTimeSlider_PreviewKeyDown"/>
                     <TextBlock x:Name="songCurrentDuration" Grid.Column="2" Text="0:00" VerticalAlignment="Center" Margin="5"/>
                 </Grid>
-                <Button x:Name="settingsButton" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Margin="5" FontFamily="Segoe MDL2 Assets" Content="&#xE713;" Click="settingsButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Settings" Visibility="Collapsed"/>
+                <Button x:Name="settingsButton" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" Margin="5" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.Settings}" Click="settingsButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Settings" Visibility="Collapsed"/>
                 <Grid Grid.Row="3" Grid.Column="0" ColumnSpacing="10" HorizontalAlignment="Center">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -119,13 +119,13 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="previousButton" Grid.Column="0" FontFamily="Segoe MDL2 Assets" Content="&#xE892;" Click="previousButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Previous"/>
-                    <Button x:Name="stopButton" Grid.Column="1" FontFamily="Segoe MDL2 Assets" Content="&#xE71A;" Click="stopButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Stop"/>
-                    <Button x:Name="playPauseButton" Grid.Column="2" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" Click="playPauseButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Play"/>
-                    <Button x:Name="nextButton" Grid.Column="3" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" Click="nextButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Next"/>
-                    <Button x:Name="randomNextButton" Grid.Column="4" FontFamily="Segoe MDL2 Assets" Content="&#xEA3D;" Click="randomNextButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Random"/>
+                    <Button x:Name="previousButton" Grid.Column="0" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.Previous}" Click="previousButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Previous"/>
+                    <Button x:Name="stopButton" Grid.Column="1" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.Stop}" Click="stopButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Stop"/>
+                    <Button x:Name="playPauseButton" Grid.Column="2" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.Play}" Click="playPauseButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Play"/>
+                    <Button x:Name="nextButton" Grid.Column="3" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.Next}" Click="nextButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Next"/>
+                    <Button x:Name="randomNextButton" Grid.Column="4" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.Random}" Click="randomNextButton_Click" Width="40" Height="40" ToolTipService.ToolTip="Random"/>
                     <Grid Grid.Column="5">
-                        <Button x:Name="playbackModeButton" FontFamily="Segoe MDL2 Assets" Content="&#xE752;" Width="40" Height="40" ToolTipService.ToolTip="Order" Click="playbackModeButton_Click"/>
+                        <Button x:Name="playbackModeButton" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.PlaybackMode}" Width="40" Height="40" ToolTipService.ToolTip="Order" Click="playbackModeButton_Click"/>
                         <Popup VerticalOffset="-300" HorizontalOffset="-40" x:Name="playbackModePopup" IsLightDismissEnabled="True" LightDismissOverlayMode="On">
                             <ListView x:Name="playbackModeView" ItemClick="playbackModeView_ItemClick" IsItemClickEnabled="True"/>
                         </Popup>
@@ -137,7 +137,7 @@
                         <ColumnDefinition Width=".100*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button x:Name="muteButton" Grid.Column="0" FontFamily="Segoe MDL2 Assets" Content="&#xE995;" Click="muteButton_Click"/>
+                    <Button x:Name="muteButton" Grid.Column="0" FontFamily="Segoe MDL2 Assets" Content="{x:Bind local:PlayerIcons.Volume3}" Click="muteButton_Click"/>
                     <Slider x:Name="volumeSlider" Value="1" Maximum="1" Grid.Column="1" ManipulationCompleted="volumeSlider_ManipulationCompleted" ManipulationMode="All" Tapped="volumeSlider_Tapped" ThumbToolTipValueConverter="{StaticResource SliderVolumeToolTipConverter}" PreviewKeyUp="volumeSlider_PreviewKeyUp" ManipulationStarted="volumeSlider_ManipulationStarted" PreviewKeyDown="volumeSlider_PreviewKeyDown" StepFrequency="0.01" SmallChange="0.01" VerticalAlignment="Center"/>
                 </Grid>
             </Grid>

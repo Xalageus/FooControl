@@ -120,7 +120,7 @@ namespace FooControl.Settings
             }
         }
 
-        public void ColorPickerButton_ColorChanged(object sender, ColorChangedEventArgs e)
+        private void ColorPickerButton_ColorChanged(Microsoft.UI.Xaml.Controls.ColorPicker sender, Microsoft.UI.Xaml.Controls.ColorChangedEventArgs args)
         {
             SendModified();
         }

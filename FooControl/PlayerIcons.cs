@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FooControl.BeefAPITypes
+namespace FooControl
 {
     static class PlayerIcons
     {
@@ -23,5 +23,8 @@ namespace FooControl.BeefAPITypes
         public const string Settings = "\uE713";
         public const string MoveLeft = "\uE76B";
         public const string MoveRight = "\uE76C";
+        public const string Add = "\uE710";
+        public const string Remove = "\uE711";
+        public const string Select = "\uE73E";
     }
 }

@@ -3,12 +3,69 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:FooControl.Settings"
+    xmlns:main="using:FooControl"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="Test2"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="newServerButton" Grid.Column="0" FontFamily="Segoe MDL2 Assets" Content="{x:Bind main:PlayerIcons.Add}" ToolTipService.ToolTip="New media server" Click="newServerButton_Click"/>
+            <Button x:Name="deleteServerButton" Grid.Column="1" FontFamily="Segoe MDL2 Assets" Content="{x:Bind main:PlayerIcons.Remove}" ToolTipService.ToolTip="Delete media server" Click="deleteServerButton_Click"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <ScrollViewer Grid.Row="0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="IP Address"/>
+                    <TextBlock Grid.Column="1" Text="Port"/>
+                    <TextBlock Grid.Column="2" Text="Username"/>
+                    <TextBlock Grid.Column="3" Text="Password"/>
+                </Grid>
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="1" BorderBrush="#FF878787" BorderThickness="1">
+                <ListView x:Name="serverListView" IsItemClickEnabled="True" SelectionMode="Multiple">
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="local:ServerLoginSettings">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="{Binding hostAddress}"/>
+                                <TextBlock Grid.Column="1" Text="{Binding hostPort}"/>
+                                <TextBlock Grid.Column="2" Text="{Binding username}"/>
+                                <TextBlock Grid.Column="3" Text="{Binding password}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Page>

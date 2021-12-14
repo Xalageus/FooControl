@@ -113,7 +113,7 @@ namespace FooControl.Settings
             }
             else if (pageType == typeof(MediaServerSettings))
             {
-                //((MediaServerSettings)page).SendSettings();
+                ((MediaServerSettings)page).SendSettings();
             }
             else if (pageType == typeof(ColumnsSettings))
             {

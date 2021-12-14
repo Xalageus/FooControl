@@ -47,7 +47,7 @@ namespace FooControl.Settings
 
         public ServerLoginSettings()
         {
-
+            //Empty constructor needed for XmlSerializer
         }
 
         public ServerLoginSettings(string hostAddress, string hostPort)
